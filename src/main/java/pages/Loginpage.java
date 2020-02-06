@@ -14,14 +14,14 @@ public class Loginpage {
     @FindBy(how = How.ID, using = "mat-input-1")
     public WebElement passWord;
 
-    @FindBy(how = How.XPATH, using = "/html/body/app-root/app-main-nav/main/app-login/mat-card/mat-card-actions/button")
+    @FindBy(how = How.XPATH, using = "/html/body/app-root/app-main-nav/main/app-login/mat-card/mat-card-actions/button") // please use css selector .login-button
     public WebElement loginBtn;
 
     public Loginpage (WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
-    public void Login (String username, String password){
+    public void Login (String username, String password){ // methods should start with small letter in java , class names should start with Capital letter
         userName.sendKeys(username);
         passWord.sendKeys(password);
     }
@@ -30,3 +30,5 @@ public class Loginpage {
         loginBtn.click();
     }
 }
+
+
